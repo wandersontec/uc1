@@ -5,3 +5,4 @@ if num1>num2:
 else:
     print(f"o valor de {num2} é maior que {num1}")
 print("teste de pull")
+print("teste de push pelo vscode")

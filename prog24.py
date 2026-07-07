@@ -31,3 +31,4 @@ match opcao:
 
     case _:
         print("Opção inválida!")
+print("teste de push pelo vscode")
