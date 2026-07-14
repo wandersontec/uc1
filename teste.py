@@ -1,35 +1,17 @@
-"""
-def calcular_media(notas):
-    return sum(notas) / len(notas)
-
-
-def obter_situacao(media):
-    if media >= 7:
-        return "Aprovado"
-    elif media >= 5:
-        return "Recuperação"
-    return "Reprovado"
-
-
-for _ in range(4):
-    nome = input("Nome do aluno: ")
-
-    notas = []
-    for i in range(1, 4):
-        nota = float(input(f"Digite a {i}ª nota: "))
-        notas.append(nota)
-
-    media = calcular_media(notas)
-    situacao = obter_situacao(media)
-
-    print("\n===== BOLETIM =====")
-    print(f"Aluno.....: {nome}")
-    print(f"Notas.....: {notas}")
-    print(f"Média.....: {media:.2f}")
-    print(f"Situação..: {situacao}")
-    '''
-
-
-
-
-    
+produtos = {"001": ("Arroz   ", 4.00),"002": ("Feijão  ", 7.00),"003": ("Macarrão", 5.00)}
+soma = 0
+compras = []
+codigo = input("Digite o código do produto (0 para encerrar): ")
+while codigo != "0":
+    if codigo in produtos:
+        nome, preco = produtos[codigo]
+        print(f"Produto adicionado: {nome} - R$ {preco:.2f}")
+        soma += preco
+        compras.append(f"{nome} - R$ {preco:.2f}")
+    else:
+        print("Código inválido!")
+    codigo = input("Digite outro código (0 para encerrar): ")
+print("\nProdutos comprados:")
+for produto in compras:
+    print("-", produto)
+print(f"\nTotal da compra com 10%: R$ {soma * 1.1:.2f}")
